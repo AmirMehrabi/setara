@@ -58,37 +58,37 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="grid gap-4">
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
+                    <img class="h-40 w-full object-cover max-w-full rounded-lg" src="{{ asset("assets/images/placeholders/1.jpg") }}"  alt="">
                 </div>
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
+                    <img class="h-full max-w-full rounded-lg" src="{{ asset("assets/images/placeholders/2.jpg") }}" alt="">
                 </div>
             </div>
             <div class="grid gap-4">
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
+                    <img class="h-full max-w-full rounded-lg" src="{{ asset("assets/images/placeholders/3.jpg") }}" alt="">
                 </div>
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
+                    <img class="h-40 w-full object-cover max-w-full rounded-lg" src="{{ asset("assets/images/placeholders/4.jpg") }}" alt="">
                 </div>
 
             </div>
             <div class="grid gap-4">
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
+                    <img class="h-40 w-full object-cover max-w-full rounded-lg" src="{{ asset("assets/images/placeholders/5.jpg") }}" alt="">
                 </div>
 
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
+                    <img class="h-full max-w-full rounded-lg" src="{{ asset("assets/images/placeholders/6.jpg") }}" alt="">
                 </div>
 
             </div>
             <div class="grid gap-4">
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
+                    <img class="h-full max-w-full rounded-lg" src="{{ asset("assets/images/placeholders/7.jpg") }}" alt="">
                 </div>
                 <div>
-                    <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
+                    <img class="h-40 w-full object-cover max-w-full rounded-lg" src="{{ asset("assets/images/placeholders/8.jpg") }}" alt="">
                 </div>
             </div>
         </div>
