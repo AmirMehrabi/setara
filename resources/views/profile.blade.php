@@ -221,7 +221,7 @@
                         <div class="space-y-2 px-4 py-2">
                           <h3 class="font-semibold text-gray-800">درباره‌ی من</h3>
                           <p class="text-gray-600 text-sm">آرایشگر متخصص، استایلیست مو، و متخصص مراقبت از پوست و مو. با +۱۵ سال سابقه فعالیت در صنعت آرایشگری.</p>
-                          <p class="text-gray-600 text-sm">IG: @aiyana_nicole_</p>
+                          <p class="text-gray-600 text-sm">IG: @faride_fatemiii</p>
                         </div>
                     
                         <!-- Hours of Operation -->
