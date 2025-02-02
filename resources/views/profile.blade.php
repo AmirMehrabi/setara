@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Jasmine Nicole Xclusives')
+@section('title', 'فریده فاطمی')
 
 @section('styles')
     <style>
