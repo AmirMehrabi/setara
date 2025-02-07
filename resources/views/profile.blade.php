@@ -23,7 +23,7 @@
 <div class="min-h-screen">
 
 
-    <div class="pt-32">
+    <div class="pt-20 lg:pt-32">
         <div class="max-w-screen-lg mx-auto p-6">
             <div class="flex items-center  gap-2 space-x-4">
               <!-- Avatar Section -->
@@ -112,14 +112,14 @@
                           <div class="flex-1">
                             <h3 class="text-lg font-semibold text-gray-800">آرایش موی مردانه</h3>
                             <div class="flex items-center space-x-2 mt-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-1 rounded-lg dark:bg-blue-900 dark:text-blue-300">برجسته</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-1 rounded-lg ">برجسته</span>
                                 <span class="text-sm font-medium text-gray-600">۵۰ دلار +</span>
                                 <span class="text-sm text-gray-500">۳۰ دقیقه</span>
                               </div>
                             <p class="text-sm text-gray-500 my-3">کوتاهی موی ساده با ماشین (سزار یا تدریجی)</p>
 
                             <div class="flex items-center mt-2">
-                                <span class="flex gap-1 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded-xl dark:bg-gray-700 dark:text-gray-300">
+                                <span class="flex gap-1 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded-xl  ">
                                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.17022 14.8942L4.794 22.9182L12 19.1298L19.206 22.9182L17.8297 14.8942L23.6595 9.21159L15.603 8.04091L12 0.740448L8.39699 8.04091L0.340454 9.21159L6.17022 14.8942ZM15.6808 14.196L16.5497 19.2622L12 16.8702L7.45026 19.2622L8.31918 14.196L4.63838 10.6081L9.72512 9.86892L12 5.25955L14.2748 9.86892L19.3616 10.6081L15.6808 14.196Z" fill="#494948"></path></svg>
                                   ۴.۳</span>
                               </div>
@@ -132,14 +132,14 @@
                           <div class="flex-1">
                             <h3 class="text-lg font-semibold text-gray-800">ترمیم کراتین</h3>
                             <div class="flex items-center space-x-2 mt-2">
-                                <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-1 rounded-lg dark:bg-green-900 dark:text-green-300">رزرو #۱</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-1 rounded-lg ">رزرو #۱</span>
                                 <span class="text-sm font-medium text-gray-600">۵۰ دلار +</span>
                                 <span class="text-sm text-gray-500">۳۰ دقیقه</span>
                               </div>
                             <p class="text-sm text-gray-500 my-3">نیاز به پیش‌پرداخت: ۱۰۰ دلار. پیش‌پرداخت برای قرار ملاقات محاسبه می‌شود مگر در صورت لغو یا تغییر زمان. ایمیل/پیامک...</p>
 
                             <div class="flex items-center mt-2">
-                                <span class="flex gap-1 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded-xl dark:bg-gray-700 dark:text-gray-300">
+                                <span class="flex gap-1 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded-xl  ">
                                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.17022 14.8942L4.794 22.9182L12 19.1298L19.206 22.9182L17.8297 14.8942L23.6595 9.21159L15.603 8.04091L12 0.740448L8.39699 8.04091L0.340454 9.21159L6.17022 14.8942ZM15.6808 14.196L16.5497 19.2622L12 16.8702L7.45026 19.2622L8.31918 14.196L4.63838 10.6081L9.72512 9.86892L12 5.25955L14.2748 9.86892L19.3616 10.6081L15.6808 14.196Z" fill="#494948"></path></svg>
                                   ۴.۶</span>
                               </div>
@@ -152,14 +152,14 @@
                           <div class="flex-1">
                             <h3 class="text-lg font-semibold text-gray-800">صاف کردن مو با سیلک پرس</h3>
                             <div class="flex items-center space-x-2 mt-2">
-                                <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-1 rounded-lg dark:bg-green-900 dark:text-green-300">رزرو #۲</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-1 rounded-lg ">رزرو #۲</span>
                                 <span class="text-sm font-medium text-gray-600">۵۰ دلار +</span>
                                 <span class="text-sm text-gray-500">۳۰ دقیقه</span>
                               </div>
                             <p class="text-sm text-gray-500 my-3">صاف و مستقیم کردن موهای فر یا بافت‌دار طبیعی با سیلک پرس. بدون نیاز به شانه داغ، این روش...</p>
 
                             <div class="flex items-center mt-2">
-                                <span class="flex gap-1 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded-xl dark:bg-gray-700 dark:text-gray-300">
+                                <span class="flex gap-1 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded-xl  ">
                                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.17022 14.8942L4.794 22.9182L12 19.1298L19.206 22.9182L17.8297 14.8942L23.6595 9.21159L15.603 8.04091L12 0.740448L8.39699 8.04091L0.340454 9.21159L6.17022 14.8942ZM15.6808 14.196L16.5497 19.2622L12 16.8702L7.45026 19.2622L8.31918 14.196L4.63838 10.6081L9.72512 9.86892L12 5.25955L14.2748 9.86892L19.3616 10.6081L15.6808 14.196Z" fill="#494948"></path></svg>
                                   ۴.۷</span>
                               </div>
@@ -181,14 +181,14 @@
                           <div class="flex-1">
                             <h3 class="text-lg font-semibold text-gray-800">مشاوره ویدیویی</h3>
                             <div class="flex items-center space-x-2 mt-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-1 rounded-lg dark:bg-blue-900 dark:text-blue-300">برجسته</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-1 rounded-lg ">برجسته</span>
                                 <span class="text-sm font-medium text-gray-600">۵۰ دلار +</span>
                                 <span class="text-sm text-gray-500">۳۰ دقیقه</span>
                               </div>
                             <p class="text-sm text-gray-500 my-3">لطفا عکسی از آخرین وضعیت موی خود ایمیل کنید. همچنین دو عکس از نتیجه‌ای که میخواهید به دست آورید ارسال کنید.</p>
 
                             <div class="flex items-center mt-2">
-                              <span class="flex gap-1 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded-xl dark:bg-gray-700 dark:text-gray-300">
+                              <span class="flex gap-1 bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-2 rounded-xl  ">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.17022 14.8942L4.794 22.9182L12 19.1298L19.206 22.9182L17.8297 14.8942L23.6595 9.21159L15.603 8.04091L12 0.740448L8.39699 8.04091L0.340454 9.21159L6.17022 14.8942ZM15.6808 14.196L16.5497 19.2622L12 16.8702L7.45026 19.2622L8.31918 14.196L4.63838 10.6081L9.72512 9.86892L12 5.25955L14.2748 9.86892L19.3616 10.6081L15.6808 14.196Z" fill="#494948"></path></svg>
                                 ۵</span>
                             </div>

@@ -26,7 +26,7 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="flex w-full items-center bg-white border-gray-200 fixed w-full z-[5000] h-32 border-b">
+    <nav class="flex w-full items-center bg-white border-gray-200 fixed w-full z-[5000] h-20 lg:h-32 border-b">
         <div class="flex w-full justify-between items-center">
             <!-- Left - Hamburger Menu -->
             <div class="w-1/2 md:w-1/3">
@@ -71,7 +71,7 @@
                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                     clip-rule="evenodd"></path>
             </svg>
-            <span class="sr-only">Close menu</span>
+            <span class="sr-only">بستن منو</span>
         </button>
         <div class="py-4 overflow-y-auto">
             @yield('drawer-content')
@@ -151,7 +151,7 @@
 
     
                 <div class="text-sm text-gray-300">© ۱۴۰۳ ستارا™. تمامی حقوق محفوظ است.</div>
-                <div class="flex space-x-4 rtl:space-x-reverse">
+                <div class="hidden lg:flex space-x-4 rtl:space-x-reverse">
                     <a href="#"><img src="{{ asset("assets/images/app-store.png") }}" class="h-10" alt="App Store"></a>
                     <a href="#"><img src="{{ asset("assets/images/app-store.png") }}" class="h-10" alt="Google Play"></a>
                 </div>
