@@ -98,9 +98,9 @@
                 <!-- List of professionals -->
                 <div class="flex flex-col space-y-4">
                     <!-- Example item -->
-                    <div class="flex items-center space-x-4 gap-4 ">
+                    <div class="max-w-4xl flex items-center space-x-4 gap-4 ">
 
-                        <div class="flex-1 flex flex-col lg:flex-row  items-center gap-2 border-b">
+                        <div class="flex-1 flex flex-col lg:flex-row  items-center gap-2 border-b p-4 space-y-4">
                             <div class="">
                                 <img src="{{ asset('assets/images/avatars/faride.jpg') }}" alt="Professional Image"
                                     class="rounded-full w-52 lg:w-40 h-52 lg:h-40 object-cover">

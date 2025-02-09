@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ستارا | @yield('title', '')</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <style>
+    @vite(["resources/css/app.css", "resources/js/app.js"])
+<style>
         @font-face {
             font-family: 'Pelak';
             src: url('/css/fonts/PelakFA.woff2') format('woff2')
