@@ -8,16 +8,53 @@
         <!-- Progress Bar -->
         <div class="mb-8">
             <div class="flex items-center justify-between mb-2">
-                <span class="text-sm font-medium text-gray-600">مرحله <span id="current-step">1</span> از 5</span>
-                <span class="text-sm font-medium text-gray-600"><span id="step-percentage">20</span>%</span>
+                <span class="text-sm font-medium text-gray-600">مرحله <span id="current-step">1</span> از 7</span>
+                <span class="text-sm font-medium text-gray-600"><span id="step-percentage">14</span>%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2">
-                <div id="progress-bar" class="bg-black h-2 rounded-full transition-all duration-300" style="width: 20%"></div>
+                <div id="progress-bar" class="bg-black h-2 rounded-full transition-all duration-300" style="width: 14%"></div>
             </div>
         </div>
 
-        <!-- Step 1: Location -->
+        <!-- Step 1: Business Information -->
         <div id="step-1" class="wizard-step">
+            <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">اطلاعات کسب و کار</h1>
+                <p class="text-gray-600 mb-8">اطلاعات تماس خود را وارد کنید تا مشتریان بتوانند با شما ارتباط برقرار کنند.</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <label for="business-name" class="block text-sm font-medium text-gray-700 mb-2">نام کسب و کار یا حرفه‌ای</label>
+                        <input type="text" id="business-name" name="business_name" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                            placeholder="مثال: سالن زیبایی گل‌ها">
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">شماره تماس</label>
+                        <input type="tel" id="phone" name="phone" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                            placeholder="09123456789">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">ایمیل</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                            placeholder="example@email.com">
+                    </div>
+                </div>
+
+                <div class="flex justify-end mt-8">
+                    <button onclick="nextStep()" class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 font-medium">
+                        بعدی
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Location -->
+        <div id="step-2" class="wizard-step hidden">
             <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
                 <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">کجا کار می‌کنید؟</h1>
                 <p class="text-gray-600 mb-8">به مشتریان بگویید کجا با شما ملاقات کنند.</p>
@@ -56,7 +93,10 @@
                     </div>
                 </div>
 
-                <div class="flex justify-end mt-8">
+                <div class="flex justify-between mt-8">
+                    <button onclick="prevStep()" class="px-6 py-3 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-medium">
+                        قبلی
+                    </button>
                     <button onclick="nextStep()" class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 font-medium">
                         بعدی
                     </button>
@@ -64,8 +104,8 @@
             </div>
         </div>
 
-        <!-- Step 2: Specialty -->
-        <div id="step-2" class="wizard-step hidden">
+        <!-- Step 3: Specialty -->
+        <div id="step-3" class="wizard-step hidden">
             <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
                 <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">تخصص خود را به ما بگویید</h1>
 
@@ -128,8 +168,8 @@
             </div>
         </div>
 
-        <!-- Step 3: Services -->
-        <div id="step-3" class="wizard-step hidden">
+        <!-- Step 4: Services -->
+        <div id="step-4" class="wizard-step hidden">
             <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
                 <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">خدمات برتر خود را اضافه کنید</h1>
                 <p class="text-gray-600 mb-2">هرچه خدمات بیشتری اضافه کنید، احتمال جذب مشتری جدید بیشتر می‌شود</p>
@@ -153,8 +193,8 @@
             </div>
         </div>
 
-        <!-- Step 4: Availability -->
-        <div id="step-4" class="wizard-step hidden">
+        <!-- Step 5: Availability -->
+        <div id="step-5" class="wizard-step hidden">
             <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
                 <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">زمان‌های کاری شما چیست؟</h1>
                 <p class="text-gray-600 mb-8">متخصصانی که حداقل 4 روز در هفته و 4+ ساعت در روز کار می‌کنند، احتمال رزرو بیشتری دارند. مشتریان عاشق رزرو آخر هفته هستند!</p>
@@ -174,8 +214,80 @@
             </div>
         </div>
 
-        <!-- Step 5: Photos -->
-        <div id="step-5" class="wizard-step hidden">
+        <!-- Step 6: Booking Settings -->
+        <div id="step-6" class="wizard-step hidden">
+            <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">تنظیمات رزرو</h1>
+                <p class="text-gray-600 mb-8">چگونه می‌خواهید مشتریان با شما وقت رزرو کنند؟</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <label for="min-booking-time" class="block text-sm font-medium text-gray-700 mb-2">حداقل زمان رزرو از قبل</label>
+                        <select id="min-booking-time" name="min_booking_time" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent">
+                            <option value="">انتخاب کنید</option>
+                            <option value="0">همین الان</option>
+                            <option value="1">1 ساعت قبل</option>
+                            <option value="2">2 ساعت قبل</option>
+                            <option value="4">4 ساعت قبل</option>
+                            <option value="12">12 ساعت قبل</option>
+                            <option value="24">1 روز قبل</option>
+                            <option value="48">2 روز قبل</option>
+                            <option value="72">3 روز قبل</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="cancellation-policy" class="block text-sm font-medium text-gray-700 mb-2">سیاست لغو رزرو</label>
+                        <select id="cancellation-policy" name="cancellation_policy" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent">
+                            <option value="">انتخاب کنید</option>
+                            <option value="1">1 ساعت قبل از وقت</option>
+                            <option value="2">2 ساعت قبل از وقت</option>
+                            <option value="4">4 ساعت قبل از وقت</option>
+                            <option value="12">12 ساعت قبل از وقت</option>
+                            <option value="24">1 روز قبل از وقت</option>
+                            <option value="48">2 روز قبل از وقت</option>
+                        </select>
+                        <p class="text-sm text-gray-500 mt-2">مشتریان باید تا این زمان قبل از وقت، رزرو را لغو کنند</p>
+                    </div>
+
+                    <div>
+                        <label for="buffer-time" class="block text-sm font-medium text-gray-700 mb-2">زمان استراحت بین نوبت‌ها</label>
+                        <select id="buffer-time" name="buffer_time" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent">
+                            <option value="0">بدون استراحت</option>
+                            <option value="5">5 دقیقه</option>
+                            <option value="10">10 دقیقه</option>
+                            <option value="15">15 دقیقه</option>
+                            <option value="30">30 دقیقه</option>
+                        </select>
+                        <p class="text-sm text-gray-500 mt-2">زمان استراحت بین هر دو نوبت متوالی</p>
+                    </div>
+
+                    <div>
+                        <label class="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" id="same-day-booking" name="same_day_booking" 
+                                class="w-4 h-4 text-black border-gray-300 rounded focus:ring-black">
+                            <span class="text-sm font-medium text-gray-700">اجازه رزرو در همان روز</span>
+                        </label>
+                        <p class="text-sm text-gray-500 mt-1 mr-6">مشتریان می‌توانند برای همان روز وقت رزرو کنند</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-between mt-8">
+                    <button onclick="prevStep()" class="px-6 py-3 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 font-medium">
+                        قبلی
+                    </button>
+                    <button onclick="nextStep()" class="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 font-medium">
+                        بعدی
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: Photos -->
+        <div id="step-7" class="wizard-step hidden">
             <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
                 <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">عکس‌های کار خود را اضافه کنید</h1>
                 <p class="text-gray-600 mb-8">پروفایل‌هایی با حداقل 4 عکس، 3 برابر بیشتر احتمال رزرو دارند.</p>
@@ -271,7 +383,7 @@
 @section('scripts')
 <script>
 let currentStep = 1;
-const totalSteps = 5;
+const totalSteps = 7;
 let selectedSpecialty = null;
 let addedServices = [];
 let uploadedPhotos = [];
