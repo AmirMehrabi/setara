@@ -6,7 +6,7 @@
 <div class="min-h-screen bg-gray-50 pt-20 lg:pt-32 pb-12">
     <div class="max-w-2xl mx-auto px-4">
         <!-- Progress Bar -->
-        <div class="mb-8">
+        <div class="mb-8 mt-6">
             <div class="flex items-center justify-between mb-2">
                 <span class="text-sm font-medium text-gray-600">مرحله <span id="current-step">1</span> از 7</span>
                 <span class="text-sm font-medium text-gray-600"><span id="step-percentage">14</span>%</span>
@@ -321,7 +321,7 @@
 </div>
 
 <!-- Service Modal -->
-<div id="service-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+<div id="service-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[6000] flex items-center justify-center p-4">
     <div class="bg-white rounded-lg max-w-md w-full p-6">
         <div class="flex justify-between items-center mb-4">
             <h3 class="text-xl font-bold text-gray-900">افزودن خدمت</h3>

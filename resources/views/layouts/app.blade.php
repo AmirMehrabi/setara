@@ -162,6 +162,58 @@
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        // Fix drawer backdrop blur issue
+        document.addEventListener('DOMContentLoaded', function() {
+            const drawerElement = document.getElementById('drawer-navigation');
+            
+            function removeBackdrop() {
+                // Remove all possible Flowbite backdrop overlays
+                const selectors = [
+                    '.fixed.inset-0.bg-gray-900',
+                    '.fixed.inset-0.bg-gray-900.bg-opacity-50',
+                    '.fixed.inset-0.bg-gray-900.bg-opacity-75',
+                    '[data-drawer-backdrop]',
+                    '.drawer-backdrop'
+                ];
+                
+                selectors.forEach(selector => {
+                    const elements = document.querySelectorAll(selector);
+                    elements.forEach(el => {
+                        // Only remove if it's a backdrop (not the drawer itself)
+                        if (el !== drawerElement && !drawerElement.contains(el)) {
+                            el.remove();
+                        }
+                    });
+                });
+                
+                // Remove backdrop blur from body
+                document.body.classList.remove('overflow-hidden');
+            }
+            
+            // Listen for drawer state changes
+            if (drawerElement) {
+                const observer = new MutationObserver(function() {
+                    const isHidden = drawerElement.classList.contains('-translate-x-full');
+                    if (isHidden) {
+                        setTimeout(removeBackdrop, 150);
+                    }
+                });
+                
+                observer.observe(drawerElement, { 
+                    attributes: true, 
+                    attributeFilter: ['class'] 
+                });
+            }
+            
+            // Also remove backdrop when clicking close buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('[data-drawer-hide="drawer-navigation"]')) {
+                    setTimeout(removeBackdrop, 150);
+                }
+            });
+        });
+    </script>
     @yield('scripts')
 </body>
 
