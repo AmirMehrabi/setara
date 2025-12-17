@@ -19,6 +19,13 @@
         body {
             font-family: 'Pelak' !IMPORTANT;
         }
+        
+        /* Prevent backdrop blur from persisting when drawer is closed */
+        body:not(.drawer-open) {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            filter: none !important;
+        }
     </style>
     @yield('styles')
 </head>
@@ -163,56 +170,122 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script>
-        // Fix drawer backdrop blur issue
-        document.addEventListener('DOMContentLoaded', function() {
-            const drawerElement = document.getElementById('drawer-navigation');
+        // Fix drawer backdrop blur issue - comprehensive solution
+        (function() {
+            const drawerId = 'drawer-navigation';
+            const drawerElement = document.getElementById(drawerId);
             
-            function removeBackdrop() {
-                // Remove all possible Flowbite backdrop overlays
-                const selectors = [
-                    '.fixed.inset-0.bg-gray-900',
-                    '.fixed.inset-0.bg-gray-900.bg-opacity-50',
-                    '.fixed.inset-0.bg-gray-900.bg-opacity-75',
-                    '[data-drawer-backdrop]',
-                    '.drawer-backdrop'
-                ];
+            function removeAllBackdrops() {
+                // Method 1: Remove by data attributes (Flowbite's preferred method)
+                const backdropByAttr = document.querySelector('[data-drawer-backdrop="' + drawerId + '"]');
+                if (backdropByAttr) {
+                    backdropByAttr.remove();
+                }
                 
-                selectors.forEach(selector => {
-                    const elements = document.querySelectorAll(selector);
-                    elements.forEach(el => {
-                        // Only remove if it's a backdrop (not the drawer itself)
-                        if (el !== drawerElement && !drawerElement.contains(el)) {
+                // Method 2: Find and remove backdrop by position and styling
+                const allFixed = document.querySelectorAll('.fixed.inset-0');
+                allFixed.forEach(el => {
+                    if (el !== drawerElement && 
+                        !drawerElement.contains(el) &&
+                        el !== document.body &&
+                        el !== document.documentElement) {
+                        // Check if it looks like a backdrop
+                        const styles = window.getComputedStyle(el);
+                        const isBackdrop = (
+                            (styles.backgroundColor !== 'rgba(0, 0, 0, 0)' && styles.backgroundColor !== 'transparent') ||
+                            el.hasAttribute('data-drawer-backdrop') ||
+                            el.hasAttribute('data-modal-backdrop') ||
+                            styles.backdropFilter !== 'none' ||
+                            styles.filter !== 'none' ||
+                            el.classList.contains('bg-gray-900') ||
+                            el.classList.contains('bg-black')
+                        );
+                        
+                        if (isBackdrop) {
                             el.remove();
+                        }
+                    }
+                });
+                
+                // Method 3: Remove blur from body and html
+                document.body.style.backdropFilter = 'none';
+                document.body.style.filter = 'none';
+                document.body.style.overflow = '';
+                document.documentElement.style.backdropFilter = 'none';
+                document.documentElement.style.filter = 'none';
+                
+                // Remove classes
+                document.body.classList.remove('overflow-hidden', 'drawer-open');
+                document.body.classList.remove('backdrop-blur-sm', 'backdrop-blur', 'backdrop-blur-md', 'backdrop-blur-lg');
+            }
+            
+            function setupDrawerListeners() {
+                if (!drawerElement) return;
+                
+                // Watch for drawer state changes
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.attributeName === 'class') {
+                            const isHidden = drawerElement.classList.contains('-translate-x-full');
+                            if (isHidden) {
+                                // Clean up when drawer is closed
+                                removeAllBackdrops();
+                                // Also try after a delay to catch late removals
+                                setTimeout(removeAllBackdrops, 100);
+                                setTimeout(removeAllBackdrops, 300);
+                            } else {
+                                // Mark body when drawer is open
+                                document.body.classList.add('drawer-open');
+                            }
                         }
                     });
                 });
                 
-                // Remove backdrop blur from body
-                document.body.classList.remove('overflow-hidden');
-            }
-            
-            // Listen for drawer state changes
-            if (drawerElement) {
-                const observer = new MutationObserver(function() {
-                    const isHidden = drawerElement.classList.contains('-translate-x-full');
-                    if (isHidden) {
-                        setTimeout(removeBackdrop, 150);
-                    }
-                });
-                
                 observer.observe(drawerElement, { 
                     attributes: true, 
-                    attributeFilter: ['class'] 
+                    attributeFilter: ['class']
+                });
+                
+                // Listen for close button clicks
+                const closeButtons = document.querySelectorAll('[data-drawer-hide="' + drawerId + '"]');
+                closeButtons.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        setTimeout(removeAllBackdrops, 100);
+                        setTimeout(removeAllBackdrops, 300);
+                    });
+                });
+                
+                // Listen for backdrop clicks (clicks on overlay)
+                document.addEventListener('click', function(e) {
+                    // If drawer is open and we click outside it
+                    if (!drawerElement.classList.contains('-translate-x-full')) {
+                        const target = e.target;
+                        // Check if click is on a backdrop element
+                        if (target.classList.contains('fixed') && 
+                            target.classList.contains('inset-0') &&
+                            target !== drawerElement &&
+                            !drawerElement.contains(target)) {
+                            setTimeout(removeAllBackdrops, 100);
+                            setTimeout(removeAllBackdrops, 300);
+                        }
+                    }
                 });
             }
             
-            // Also remove backdrop when clicking close buttons
-            document.addEventListener('click', function(e) {
-                if (e.target.closest('[data-drawer-hide="drawer-navigation"]')) {
-                    setTimeout(removeBackdrop, 150);
+            // Initialize
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setupDrawerListeners);
+            } else {
+                setupDrawerListeners();
+            }
+            
+            // Also run cleanup periodically when drawer is closed
+            setInterval(function() {
+                if (drawerElement && drawerElement.classList.contains('-translate-x-full')) {
+                    removeAllBackdrops();
                 }
-            });
-        });
+            }, 1000);
+        })();
     </script>
     @yield('scripts')
 </body>
