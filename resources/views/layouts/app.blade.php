@@ -25,7 +25,7 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="flex w-full items-center bg-white border-gray-200 fixed w-full z-[5000] h-20 lg:h-32 border-b">
+    <nav class="flex items-center bg-white border-gray-200 fixed w-full z-[5000] h-20 lg:h-32 border-b">
         <div class="flex w-full justify-between items-center">
             <!-- Left - Hamburger Menu -->
             <div class="w-1/2 md:w-1/3">
@@ -49,9 +49,9 @@
                 <button class="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 rounded-lg">
                     ورود
                 </button>
-                <button class="px-4 py-2 text-sm font-medium text-white bg-black hover:bg-gray-800 rounded-lg">
+                <a href="{{ route('business.register') }}" class="px-4 py-2 text-sm font-medium text-white bg-black hover:bg-gray-800 rounded-lg">
                     ثبت کسب و کار
-                </button>
+                </a>
             </div>
         </div>
     </nav>

@@ -14,3 +14,7 @@ Route::get('profile', function () {
 Route::get('search', function () {
     return view('search');
 });
+
+Route::get('business/register', function () {
+    return view('business.register');
+})->name('business.register');
